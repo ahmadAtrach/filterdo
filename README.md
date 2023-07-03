@@ -55,4 +55,4 @@ To use the Filterado library in your JavaScript projects, follow these steps:
 
 
 
-3. Customize the code comments and placeholders (`your_api_key`) according to your requirements.
+3. Customize the code comments and placeholders (`your_api_key`) according to your Chatgpt api key.
