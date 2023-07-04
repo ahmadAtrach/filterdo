@@ -54,6 +54,7 @@ class Filterdo {
    * @return {Promise<string>} The generated response.
    */
   async createChatMessage(condition, array ,apiKey) {
+    array = array[0];
     const jsonString = JSON.stringify(array);
     const generateResponse = async () => {
       const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
