@@ -57,13 +57,15 @@ class Filterdo {
     array = [array[0]];
     const jsonString = JSON.stringify(array);
     const generateResponse = async () => {
-      const apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions';
+      const apiUrl = 'https://api.openai.com/v1/completions';
       let output;
       const response = await axios.post(apiUrl, {
         prompt: 'Write a function called filterArray which takes just an array to filter an array like this one : '+ jsonString +' the condition is '+ condition +' give me just the function without any addtional text',
-        max_tokens: 50,  // Set the desired response length
-        n: 1,  // Generate a single response
-        stop: null  // Keep generating until the max tokens limit is reached
+        "model": "text-davinci-003",
+        "max_tokens": 300,
+        "stream": false,
+        "logprobs": null,
+        "stop": null
       }, {
         headers: {
           'Authorization': `Bearer ${apiKey}`,
